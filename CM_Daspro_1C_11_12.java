@@ -98,6 +98,7 @@ public class CM_Daspro_1C_11_12 {
                 System.out.println("Pilihan tidak valid. Silahkan input kembali.");
             }
         }
+        madeIn1112.close();
     }
 
 }
