@@ -33,7 +33,33 @@ public class CM_Daspro_1C_11_12 {
         }else{
             System.out.println("Nomor item tidak valid");
         } 
-    } 
+    }
+
+    static void tambahItemBaru (){
+        if (nomor1112 >= namaBarang1112.length) {
+            System.out.println("Inventori Sudah Penuh.");
+            return;
+        }
+        System.out.println("\n===== TAMBAH ITEM BARU =====");
+        madeIn1112.nextLine();
+        System.out.print("Masukan nama item : ");
+        String namaBaru1112 = madeIn1112.nextLine();
+        System.out.print("Masukkan kategori item : ");
+        String kategoriBaru1112 = madeIn1112.nextLine();
+        System.out.print("Masukkan jumlah stok awal : ");
+        int inputStok1112 = madeIn1112.nextInt();
+        int stokBaru1112 = inputStok1112;
+
+        if (stokBaru1112 > 0) {
+            namaBarang1112[nomor1112] = namaBaru1112;
+            kategori1112[nomor1112] = kategoriBaru1112;
+            stokBarang1112[nomor1112] = stokBaru1112;
+            nomor1112++;
+            System.out.println("Item baru berhasil ditambahkan");
+        } else {
+            System.out.println("Stok awal harus lebih dari 0");
+        }
+    }
 
     public static void main(String[] args) {
         namaBarang1112[0] = "Kopi Hitam";
@@ -61,10 +87,15 @@ public class CM_Daspro_1C_11_12 {
             int menu1112 = madeIn1112.nextInt();
             if (menu1112 == 1) {
                 tampilkanInventori();
-            }if (menu1112 == 2) {
+            } else if (menu1112 == 2) {
                 tambahStock();
-            }if (menu1112 == 3) {
-
+            } else if (menu1112 == 3) {
+                tambahItemBaru();
+            } else if (menu1112 == 4) {
+                System.out.println("Keluar dari menu.");
+                break;
+            } else {
+                System.out.println("Pilihan tidak valid. Silahkan input kembali.");
             }
         }
     }
